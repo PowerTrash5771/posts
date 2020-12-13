@@ -1,0 +1,12 @@
+{
+ "posts": [
+  {
+   "isPortrait": true,
+   "url": "img1.jpg",
+  },
+  {
+   "isPortrait": true,
+   "url": "img2.jpg"
+  }
+ ]
+}
