@@ -7,6 +7,10 @@
   {
    "isPortrait": true,
    "url": "img2.jpg"
+  },
+  {
+   "isPortrait": false,
+   "url": "IMG_6179_001.jpg"
   }
  ]
 }
