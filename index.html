@@ -1,0 +1,84 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <!-- plz go this code is bad -->
+    <div class="head">
+        <h1>Power Trash 5771</h1>
+    </div>
+    <div class="landscapes">
+
+    </div>
+    <div class="portraits">
+
+    </div>
+    <hr style="margin: 10px;" color="#f1f1f1" solid>
+</body>
+<style>
+    ::selection {
+        color: white;
+        background-color: rgba(0,0,0,0.4);
+    }
+    body {
+        margin: 0;
+    }
+    .landscapes,
+    .portraits {
+     display: flex;
+     width:100%;
+     flex-flow:wrap;
+     flex-wrap:wrap;
+    }
+    .portrait {
+     width: 8%;
+     height: 23%;
+    margin: 1%;
+    box-shadow: 2px 5px 10px rgba(0,0,0,0.2);
+background-size: cover;
+     background-position: center;
+    }
+    .landscape {
+     width: 23%;
+     height: 10%;
+    box-shadow: 2px 5px 10px rgba(0,0,0,0.2);
+margin: 1%;
+     background-size: cover;
+     background-position: center;
+    }
+    .head h1 {
+        letter-spacing: 6px;
+        font-family: sans-serif;
+        font-weight: bolder;
+        color: white;
+        text-shadow: 2.7px 2.7px 0 rgba(0,0,0,0.2);
+    }
+    .head {
+        width: 100%;
+        height: 32%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border-bottom: 0.1px solid #f9f9f9;
+        background-image: url(bg.png);
+        background-size: cover;
+        background-position: center;
+    }
+</style>
+<script>
+fetch("posts.json").then(function (res) {
+ return res.json();
+}).then(function (data) {
+ setTimeout(function () {
+  data.posts.forEach(item => {
+   if(item.isPortrait) {
+    document.querySelector('.portraits').innerHTML += `<div class="portrait" style="background-image: url(${item.url})"></div>`;
+   } else {
+    document.querySelector('.landscapes').innerHTML += `<div class="landscape" style="background-image: url(${item.url})"></div>`;   
+   }
+  })
+ },200);
+})
+</script>
+</html>
